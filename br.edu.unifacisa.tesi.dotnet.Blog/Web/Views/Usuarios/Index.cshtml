@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Dominio.Usuario>
+
+@{
+    ViewBag.Title = "Criar Usuario";
+}
+
+<h2>Criar Usuario</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataCadastro)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataCadastro)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.UsuarioId }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.UsuarioId }) |
+            @Html.ActionLink("Deletar", "Delete", new { id=item.UsuarioId }) |
+            @Html.ActionLink("Postar", "../Posts/Create", new { id = item.UsuarioId }) |
+        </td>
+    </tr>
+}
+
+</table>

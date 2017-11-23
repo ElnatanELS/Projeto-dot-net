@@ -1,0 +1,59 @@
+﻿@model Dominio.Post
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Post</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Titulo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Texto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Texto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataCastrado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataCastrado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UsuarioId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UsuarioId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AreaId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AreaId)
+        </dd>
+
+    </dl>
+</div>
+
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.PostID }) |
+    @Html.ActionLink("Comentar", "../Comentarios/create", new { id = Model.PostID, id2 = Model.UsuarioId }) 
+</p>
